@@ -1102,6 +1102,9 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	@Override
 	public Object getBean(String name) throws BeansException {
 		assertBeanFactoryActive();
+		// fogcoding
+		System.out.println("this is use source code to run app!");
+
 		return getBeanFactory().getBean(name);
 	}
 
