@@ -1,3 +1,5 @@
+import com.sun.org.apache.xalan.internal.xsltc.cmdline.Compile
+
 plugins {
     id 'java'
 }
@@ -12,9 +14,20 @@ repositories {
 }
 
 dependencies {
-//    testCompile group: 'junit', name: 'junit', version: '4.12'
 
     compile project(':spring-context')
+//    compile project(':spring-aop')
+    compile project(':spring-aspects')
+//    compile project(':spring-beans')
+//    compile project(':spring-core')
+
+
+    // https://mvnrepository.com/artifact/cglib/cglib
+    compile group: 'cglib', name: 'cglib', version: '3.3.0'
+
+
+    // https://mvnrepository.com/artifact/junit/junit
+    testCompile group: 'junit', name: 'junit', version: '4.12'
 
 
 }
