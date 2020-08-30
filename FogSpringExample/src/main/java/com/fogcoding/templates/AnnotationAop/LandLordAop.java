@@ -17,14 +17,14 @@ public class LandLordAop {
      */
     @Before("execution(* com.fogcoding.templates.AnnotationAop.LandLord.service())")
     public void bofore(){
-        System.out.println("张广告");
-        System.out.println("邀约租户");
+        System.out.println("贴广告");
+        System.out.println("邀请租户");
     }
 
     @After(("execution(* com.fogcoding.templates.AnnotationAop.LandLord.service())"))
     public void after(){
         System.out.println("拿提成");
-        System.out.println("下一位");
+        System.out.println("下一个");
     }
 
 

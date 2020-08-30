@@ -20,7 +20,6 @@ public class Test {
 		Human human2 = (Human) context.getBean("human2");
 		System.out.println(human2.toString());
 
-
 		Stocks stocks = (Stocks) context.getBean("stocks");
 		System.out.println("animal 1 :"+stocks.getAnimal1().getName());
 		System.out.println("animal 1 :"+stocks.getAnimal1().getPrice());

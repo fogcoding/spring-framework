@@ -10,7 +10,6 @@ public class LoggerAspect {
         System.out.println("end log:" + joinPoint.getSignature().getName());
         return object;
 
-
     }
 
 }
