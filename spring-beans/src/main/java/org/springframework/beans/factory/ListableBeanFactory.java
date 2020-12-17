@@ -54,6 +54,10 @@ import org.springframework.lang.Nullable;
  * @since 16 April 2001
  * @see HierarchicalBeanFactory
  * @see BeanFactoryUtils
+ *
+ * 显然这个是扩展基本的BeanFactory，
+ * 提供了方法获取BeanFactory内部所有Bean的类型，名称的列表
+ * 提供了方法获取具有某些特殊注解的Bean清单
  */
 public interface ListableBeanFactory extends BeanFactory {
 

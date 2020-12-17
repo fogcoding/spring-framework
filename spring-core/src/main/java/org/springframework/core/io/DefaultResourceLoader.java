@@ -145,20 +145,22 @@ public class DefaultResourceLoader implements ResourceLoader {
 		Assert.notNull(location, "Location must not be null");
 
 		for (ProtocolResolver protocolResolver : getProtocolResolvers()) {
+			// 先直接用默认的方式加载资源
 			Resource resource = protocolResolver.resolve(location, this);
 			if (resource != null) {
 				return resource;
 			}
 		}
-
+		// 若是默认方式加载失败，则走文件路径方式加载
 		if (location.startsWith("/")) {
 			return getResourceByPath(location);
-		}
+		}// 若location不是路径则通过classpath方式加载
 		else if (location.startsWith(CLASSPATH_URL_PREFIX)) {
 			return new ClassPathResource(location.substring(CLASSPATH_URL_PREFIX.length()), getClassLoader());
 		}
 		else {
 			try {
+				// 若同时不满足路径和classpath方式，则使用URL方式加载
 				// Try to parse the location as a URL...
 				URL url = new URL(location);
 				return (ResourceUtils.isFileURL(url) ? new FileUrlResource(url) : new UrlResource(url));

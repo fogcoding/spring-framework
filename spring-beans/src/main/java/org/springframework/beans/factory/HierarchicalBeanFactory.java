@@ -30,6 +30,10 @@ import org.springframework.lang.Nullable;
  * @author Juergen Hoeller
  * @since 07.07.2003
  * @see org.springframework.beans.factory.config.ConfigurableBeanFactory#setParentBeanFactory
+ *
+ * 这里提到了一个获取父级BeanFactory的方法和忽略本地BeanFactory的差异查找某个Bean，
+ * 似乎表示对于Bean的加载工厂还可以存在父子级别的关系，
+ * 这个应当与Bean加载过程中的工厂传递顺序有关
  */
 public interface HierarchicalBeanFactory extends BeanFactory {
 

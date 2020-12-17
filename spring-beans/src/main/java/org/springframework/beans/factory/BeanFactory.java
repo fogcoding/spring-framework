@@ -112,8 +112,18 @@ import org.springframework.lang.Nullable;
  * @see org.springframework.beans.factory.config.BeanPostProcessor#postProcessAfterInitialization
  * @see DisposableBean#destroy
  * @see org.springframework.beans.factory.support.RootBeanDefinition#getDestroyMethodName
+ *
+ * 	这是Bean工厂的顶层接口，仅仅包含了一些获取bean和对于Bean是否单例，原型等特性的判断
+ *  显然这个是一个最基础的接口，但也是最重要的接口，
+ *  因为绝大部分的Bean操作基本都是由此接口拓展而来
+ *
+ *  comment by fogcoding 2020-12-16 00:10:00
  */
 public interface BeanFactory {
+
+
+
+
 
 	/**
 	 * Used to dereference a {@link FactoryBean} instance and distinguish it from

@@ -25,6 +25,10 @@ import org.springframework.util.ResourceUtils;
  * is required to provide this functionality, plus extended
  * {@link org.springframework.core.io.support.ResourcePatternResolver} support.
  *
+ * 以上语句说明了要实现一个ApplicationContext 需要提供ResourceLoader这个接口里的函数，
+ * 并且需要继承org.springframework.core.io.support.ResourcePatternResolver这个类。
+ * 那是不是说，我自己也可以写一个我自己的类，按照这样的方法，也把Spring应用跑起来呢？
+ *
  * <p>{@link DefaultResourceLoader} is a standalone implementation that is
  * usable outside an ApplicationContext, also used by {@link ResourceEditor}.
  *
@@ -38,6 +42,10 @@ import org.springframework.util.ResourceUtils;
  * @see org.springframework.core.io.support.ResourcePatternResolver
  * @see org.springframework.context.ApplicationContext
  * @see org.springframework.context.ResourceLoaderAware
+ *
+ * 这是定义加载classpath和系统资源的接口
+ * 并且在上面说明了如何定义和实现一个 org.springframework.context.ApplicationContext
+ *
  */
 public interface ResourceLoader {
 

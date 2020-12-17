@@ -19,6 +19,9 @@ dependencies {
 //    compile project(':spring-beans')
 //    compile project(':spring-core')
 
+    // https://mvnrepository.com/artifact/io.spring.javaformat/spring-javaformat-formatter-shaded
+    compile group: 'io.spring.javaformat', name: 'spring-javaformat-formatter-shaded', version: '0.0.22'
+
 
     // https://mvnrepository.com/artifact/cglib/cglib
     compile group: 'cglib', name: 'cglib', version: '3.3.0'
