@@ -542,6 +542,11 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 			try {
 
 				/**
+				 * Object - > Bean(能被获取到，并且收到所有Facotrys设定的约束条件所限制)
+				 */
+
+
+				/**
 				 *  这里允许beanFactory进行后置处理
 				 * 	这里后置处理有个理解的问题：bean初始化的前后，到底哪里算是前，哪里算是后？
 				 * 	个人猜想应该是在在初始化之后，而不是Bean周期里的前后；或者这里的后是指加载了Object对象，而未变成Bean之前
