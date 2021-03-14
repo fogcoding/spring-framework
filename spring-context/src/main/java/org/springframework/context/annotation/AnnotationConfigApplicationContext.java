@@ -63,6 +63,7 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 	 * through {@link #register} calls and then manually {@linkplain #refresh refreshed}.
 	 */
 	public AnnotationConfigApplicationContext() {
+		// 最原始的所有内部spring处理器是在这一步读取进来的
 		this.reader = new AnnotatedBeanDefinitionReader(this);
 		this.scanner = new ClassPathBeanDefinitionScanner(this);
 	}
@@ -84,10 +85,13 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 	 * {@link Configuration @Configuration} classes
 	 */
 	public AnnotationConfigApplicationContext(Class<?>... componentClasses) {
+		//初始化自己这个类 (DefaultListableBeanFactory  是在上级父类GenericApplicationContext 的构造方法里直接new出来的 )
 		//BeanFactory的基础创建是在父类创建的,就是在下面这一行
 		this();
+		// 注册启动类
 		// 注册了自己的启动类作为一个bean
 		register(componentClasses);
+		// 启动加载，刷新流程，调用各种处理器
 		// 开启application的刷新流程，重新扫描所有的bean与监听器，处理器
 		refresh();
 	}

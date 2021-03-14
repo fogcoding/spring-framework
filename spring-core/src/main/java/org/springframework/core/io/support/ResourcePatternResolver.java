@@ -50,6 +50,11 @@ import org.springframework.core.io.ResourceLoader;
  * @see org.springframework.core.io.ResourceLoader
  * @see org.springframework.context.ApplicationContext
  * @see org.springframework.context.ResourceLoaderAware
+ *
+ * 根据上文，
+ * 这是一个定于匹配资源加载路径规则的接口
+ * 仅仅提供接口而不做特定的格式实现，并且推荐用classpath*:的规则来载入所有匹配的classpath路径
+ *
  */
 public interface ResourcePatternResolver extends ResourceLoader {
 
