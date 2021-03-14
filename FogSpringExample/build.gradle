@@ -14,10 +14,10 @@ repositories {
 dependencies {
 
     compile project(':spring-context')
-//    compile project(':spring-aop')
+    compile project(':spring-aop')
     compile project(':spring-aspects')
-//    compile project(':spring-beans')
-//    compile project(':spring-core')
+    compile project(':spring-beans')
+    compile project(':spring-core')
 
     // https://mvnrepository.com/artifact/io.spring.javaformat/spring-javaformat-formatter-shaded
     compile group: 'io.spring.javaformat', name: 'spring-javaformat-formatter-shaded', version: '0.0.22'

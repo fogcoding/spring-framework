@@ -122,6 +122,10 @@ public abstract class AbstractRefreshableApplicationContext extends AbstractAppl
 	 */
 	@Override
 	protected final void refreshBeanFactory() throws BeansException {
+		/**
+		 * 原来在通用的GenericApplicationContext中已经初始化过一次BeanFactory
+		 * 然而这里又摧毁并重新创建，这是为什么？
+		 */
 		if (hasBeanFactory()) {
 			destroyBeans();
 			closeBeanFactory();
