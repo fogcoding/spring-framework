@@ -1,5 +1,6 @@
 package com.fogcoding;
 
+import com.fogcoding.entity.FogType;
 import com.fogcoding.entity.PoJo;
 import com.fogcoding.entity.User;
 import org.springframework.beans.factory.support.AbstractBeanFactory;
@@ -23,6 +24,8 @@ public class Main {
 				= new AnnotationConfigApplicationContext(AppConfig.class);
 
 		System.out.println("中文输出测试！");
+		FogType fogType = (FogType) configApplicationContext.getBean("fogType");
+		System.out.println("自动织入数值测试:" + fogType.getMsg());
 
 		System.out.println(configApplicationContext.getBean(User.class).toString());
 		System.out.println(configApplicationContext.getBean(PoJo.class).toString());
