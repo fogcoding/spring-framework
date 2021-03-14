@@ -11,8 +11,12 @@ public class Main {
 
 		AnnotationConfigApplicationContext configApplicationContext
 				= new AnnotationConfigApplicationContext(AppConfig.class);
+
+		System.out.println("中文输出测试！");
+
 		System.out.println(configApplicationContext.getBean(User.class).toString());
 		System.out.println(configApplicationContext.getBean(PoJo.class).toString());
+
 
 
 	}
